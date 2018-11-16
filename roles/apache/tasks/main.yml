@@ -1,0 +1,13 @@
+---
+- name: install httpd
+  yum: name={{ item }} state=present
+  with_items:
+    - httpd
+    - httpd-devel
+    - php
+    - php-mysql
+    - php-devel
+
+- name: start httpd
+  service: name=httpd state=started enabled=yes
+

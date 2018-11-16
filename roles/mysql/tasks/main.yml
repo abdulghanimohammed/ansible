@@ -1,0 +1,10 @@
+---
+- name: install mysql and dependencies
+  yum: name={{ item }} state=present
+  with_items: 
+    - mysql-server
+    - mysql
+    - mysql-devel
+
+- name: start mysql
+  service: name=mysqld state=started enabled=yes

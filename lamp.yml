@@ -1,0 +1,8 @@
+- hosts: "localhost"
+  become: true
+  remote_user: app
+  roles: 
+    - apache
+    #- php
+    - mysql
+    #- dependency
